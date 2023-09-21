@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <cstring>
 #include <string.h>
+#include <stdlib.h>
 
 int main(int ac, char **av);
 int main(void);
