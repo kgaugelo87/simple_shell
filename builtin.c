@@ -7,44 +7,45 @@
  * Return: Always return the value of (0)
  */
 
-int _change_dir(info_t *info)
+int _change_dir(info_t *details)
 {
-	char *s, *dir, buffer[1024];
+	char *s, *dir;
 	int set_chdir;
+	char buffer[1024];
+
 	s = getcwd(buffer, 1024);
-        
-	if (!s)
+        if (!s)
 		_puts("TODO: >>getcwd failure<<\n");
-	if (!info->argv[1])
+	if (!details->argv[1])
 	{
-		dir = _getenv(info, "INDEX=");
+		dir = _getenv(details, "HOME=");
 		if (!dir)
-			set_chdir = chdir((dir = _getenv(info, "PWD=")) ? dir : "/");
+			set_chdir = chdir((dir = _getenv(details, "PWD=")) ? dir : "/");
 		else
 			set_chdir = chdir(dir);
 	}
-	else if (_strcmp(info->argv[1], "-") == 0)
+	else if (_strcmp(details->argv[1], "-") == 0)
 	{
-		if (!_getenv(info, "OLDPWD="))
+		if (!_getenv(details, "OLDPWD="))
 		{
 			_puts(s);
 			_putchar('\n');
 			return (1);
 		}
-		_puts(_getenv(info, "OLDPWD=")), _putchar('\n');
-		set_chdir = chdir((dir = _getenv(info, "OLDPWD=")) ? dir : "/");
+		_puts(_getenv(details, "OLDPWD=")), _putchar('\n');
+		set_chdir = chdir((dir = _getenv(details, "OLDPWD=")) ? dir : "/");
 	}
 	else
-		set_chdir = chdir(info->argv[1]);
+		set_chdir = chdir(details->argv[1]);
 	if (set_chdir == -1)
 	{
-		print_error(info, "Can't CD into ");
-		_eputs(info->argv[1]), _eputchar('\n');
+		print_error(details, "Can't CD into ");
+		_eputs(details->argv[1]), _eputchar('\n');
 	}
 	else
 	{
-		_setenv(info, "OLDPWD", _getenv(info, "PWD="));
-		_setenv(info, "PWD", getcwd(buffer, 1024));
+		_setenv(details, "OLDPWD", _getenv(details, "PWD="));
+		_setenv(details, "PWD", getcwd(buffer, 1024));
 	}
 	return (0);
 }
