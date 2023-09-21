@@ -4,11 +4,12 @@
 #include <stdio.h>
 #include <cstring>
 #include <string.h>
-#include <unistd.h>
 
 int main(int ac, char **av);
 int main(void);
 int main(int ac, char **av, char **env);
+int _change_dir(info_t *details);
+int _curenviron(info_t *details);
 
 /** 
  * Getenv
