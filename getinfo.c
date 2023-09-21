@@ -1,3 +1,5 @@
+#include <main.h>
+
 /**
  * _setenv - Initialisation of new enviroment
  * @info: Structure containing luseful arguments.
