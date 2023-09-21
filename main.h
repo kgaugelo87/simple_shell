@@ -2,6 +2,8 @@
 #define _SHELL_H
 
 #include <stdio.h>
+#include <cstring>
+#include <string.h>
 
 int main(int ac, char **av);
 int main(void);
