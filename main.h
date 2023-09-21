@@ -2,6 +2,8 @@
 #define _SHELL_H
 
 #include <stdio.h>
+#include <cstring>
+#include <string.h>
 
 int main(int ac, char **av);
 int main(void);
@@ -25,4 +27,10 @@ int _unsetenv(const char *name);
  * Betty checker
  */
 int bfree(void **ptr)
+
+/**
+ * environ
+ */
+int _curenviron(info_t *details)
+
 #endif
