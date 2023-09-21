@@ -8,6 +8,8 @@
 int main(int ac, char **av);
 int main(void);
 int main(int ac, char **av, char **env);
+int _change_dir(info_t *info);
+int _curenviron(info_t *details);
 
 /** 
  * Getenv
@@ -27,10 +29,4 @@ int _unsetenv(const char *name);
  * Betty checker
  */
 int bfree(void **ptr)
-
-/**
- * environ
- */
-int _curenviron(info_t *details)
-
 #endif
