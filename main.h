@@ -1,6 +1,6 @@
 #ifndef _SHELL_H
 #define _SHELL_H
-
+#include <stdlib.h>
 #include <stdio.h>
 #include <cstring>
 #include <string.h>
