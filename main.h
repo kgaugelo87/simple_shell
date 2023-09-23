@@ -229,3 +229,12 @@ void *_realloc(void *ptr, unsigned int size, unsigned int osize);
 int our_cmd(info_t *details, char *p);
 char *fpath(info_t *details, char *pstr, char *command);
 char *same_chars(char *path_str, int start, int stop);
+
+/**
+ * string1
+ *
+ */
+void _puts(char *str);
+int _putchar(char c);
+char *_strcpy(char *dest, char *src);
+char *_strdup(const char *str);
