@@ -222,3 +222,10 @@ void unbound(char **multi);
 char *_memset(char *s, char b, unsigned int n);
 void *_realloc(void *ptr, unsigned int size, unsigned int osize);
 
+/**
+ * inspect/parser
+ *
+ */
+int our_cmd(info_t *details, char *p);
+char *fpath(info_t *details, char *pstr, char *command);
+char *same_chars(char *path_str, int start, int stop);
