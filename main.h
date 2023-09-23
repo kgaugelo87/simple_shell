@@ -213,3 +213,12 @@ typedef struct liststr
 	char *str;
 	struct liststr *next;
 } list_t;
+
+/**
+ * realloc
+ *
+ */
+void unbound(char **multi);
+char *_memset(char *s, char b, unsigned int n);
+void *_realloc(void *ptr, unsigned int size, unsigned int osize);
+
